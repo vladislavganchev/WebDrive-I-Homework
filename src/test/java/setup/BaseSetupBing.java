@@ -17,6 +17,11 @@ public class BaseSetupBing {
     protected static WebDriver driver;
     private static String actualResult;
 
+    @AfterEach
+    public void tearDown() {
+        driver.close();
+    }
+
     public static void selectBrowser(BrowserType browserType) {
         switch (browserType) {
             case CHROME:
